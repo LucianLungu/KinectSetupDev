@@ -1,0 +1,14 @@
+﻿<Window x:Class="KinectSetupDev.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="240" Width="979" Loaded="Window_Loaded" Closing="Window_Closing" xmlns:my="clr-namespace:Microsoft.Samples.Kinect.WpfViewers;assembly=Microsoft.Samples.Kinect.WpfViewers">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80*" />
+            <ColumnDefinition Width="423*" />
+        </Grid.ColumnDefinitions>
+        <my:KinectSensorChooser HorizontalAlignment="Left" Margin="12,0,0,0" Name="kinectSensorChooser1" VerticalAlignment="Top" Width="328" Grid.ColumnSpan="2" />
+        <Image Grid.Column="1" Height="240" HorizontalAlignment="Left" Margin="59,12,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="320" ImageFailed="image1_ImageFailed" />
+        <my:KinectColorViewer Grid.Column="1" HorizontalAlignment="Left" Margin="402,31,0,0" Name="kinectColorViewer1" VerticalAlignment="Top" Height="240" Width="320" Kinect="{Binding ElementName=kinectSensorChooser1, Path=Kinect}" />
+    </Grid>
+</Window>
